@@ -14,6 +14,11 @@ function App() {
         title={"Car revision"}
         amount={2500}
       />
+      <ExpenseItem
+        date={new Date("2020 04 16")}
+        title={"Supermarket"}
+        amount={250}
+      />
     </div>
   );
 }

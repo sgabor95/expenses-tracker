@@ -1,4 +1,6 @@
 import ExpensesList from "./components/Expenses/ExpensesList";
+import NewExpense from "./components/NewExpense/NewExpense";
+
 import React from "react";
 
 const App = () => {
@@ -26,6 +28,7 @@ const App = () => {
   return (
     <div>
       <h2>My app's heading!</h2>
+      <NewExpense />
       <ExpensesList expenses={expenses} />
       <h2>My app's footer!</h2>
     </div>

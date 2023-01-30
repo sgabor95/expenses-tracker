@@ -1,24 +1,28 @@
 import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import "./ExpensesList.css";
-import React from "react";
+import React, { Fragment } from "react";
 
 const ExpensesList = (props) => {
   const { expenses } = props;
 
-  return (
-    <Card className="expenses">
-      {expenses.map((element) => {
-        return (
-          <ExpenseItem
-            date={element.date}
-            title={element.title}
-            amount={element.amount}
-          />
-        );
-      })}
-    </Card>
-  );
+  const renderExpenses = () => {
+    return (
+      <Fragment>
+        {expenses.map((element) => {
+          return (
+            <ExpenseItem
+              date={element.date}
+              title={element.title}
+              amount={element.amount}
+            />
+          );
+        })}
+      </Fragment>
+    );
+  };
+
+  return <Card className="expenses">{renderExpenses()}</Card>;
 };
 
 export default ExpensesList;

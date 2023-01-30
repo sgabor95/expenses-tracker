@@ -1,10 +1,12 @@
-import { Fragment } from "react";
 import ExpenseItem from "./ExpenseItem";
+import Card from "./Card";
 import "./ExpensesList.css";
 
-function renderExpenses(expenses) {
+function ExpensesList(props) {
+  const { expenses } = props;
+
   return (
-    <Fragment>
+    <Card className="expenses">
       {expenses.map((element) => {
         return (
           <ExpenseItem
@@ -14,14 +16,8 @@ function renderExpenses(expenses) {
           />
         );
       })}
-    </Fragment>
+    </Card>
   );
-}
-
-function ExpensesList(props) {
-  const { expenses } = props;
-
-  return <div className="expenses">{renderExpenses(expenses)}</div>;
 }
 
 export default ExpensesList;

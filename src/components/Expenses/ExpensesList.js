@@ -1,8 +1,9 @@
 import ExpenseItem from "./ExpenseItem";
-import Card from "./Card";
+import Card from "../UI/Card";
 import "./ExpensesList.css";
+import React from "react";
 
-function ExpensesList(props) {
+const ExpensesList = (props) => {
   const { expenses } = props;
 
   return (
@@ -18,6 +19,6 @@ function ExpensesList(props) {
       })}
     </Card>
   );
-}
+};
 
 export default ExpensesList;

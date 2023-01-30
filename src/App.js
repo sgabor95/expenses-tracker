@@ -1,6 +1,7 @@
-import ExpensesList from "./components/ExpensesList";
+import ExpensesList from "./components/Expenses/ExpensesList";
+import React from "react";
 
-function App() {
+const App = () => {
   const expenses = [
     {
       id: "e1",
@@ -29,6 +30,6 @@ function App() {
       <h2>My app's footer!</h2>
     </div>
   );
-}
+};
 
 export default App;

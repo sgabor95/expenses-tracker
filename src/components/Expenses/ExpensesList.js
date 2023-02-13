@@ -13,13 +13,12 @@ const ExpensesList = (props) => {
       <Fragment>
         {expenses
           .filter(
-            (expense) =>
-              !yearFilter ||
-              expense.date.getFullYear().toString() === yearFilter
+            (expense) => expense.date.getFullYear().toString() === yearFilter
           )
           .map((element) => {
             return (
               <ExpenseItem
+                key={element.id}
                 date={element.date}
                 title={element.title}
                 amount={element.amount}

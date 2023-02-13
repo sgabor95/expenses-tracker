@@ -1,48 +1,24 @@
+import React from "react";
+
 import ExpenseItem from "./ExpenseItem";
-import ExpensesFilter from "./ExpensesFilter";
-import Card from "../UI/Card";
 import "./ExpensesList.css";
-import React, { Fragment, useState } from "react";
 
 const ExpensesList = (props) => {
-  const [yearFilter, setYearFilter] = useState("2020");
-  const { expenses } = props;
-
-  const renderExpenses = () => {
-    return (
-      <Fragment>
-        {expenses
-          .filter(
-            (expense) => expense.date.getFullYear().toString() === yearFilter
-          )
-          .map((element) => {
-            return (
-              <ExpenseItem
-                key={element.id}
-                date={element.date}
-                title={element.title}
-                amount={element.amount}
-              />
-            );
-          })}
-      </Fragment>
-    );
-  };
-
-  const filterChangeHandler = (newFilter) => {
-    setYearFilter(newFilter);
-  };
+  if (props.items.length === 0) {
+    return <h2 className="expenses-list__fallback">Found no expenses.</h2>;
+  }
 
   return (
-    <div>
-      <Card className="expenses">
-        <ExpensesFilter
-          selected={yearFilter}
-          onFilterChange={filterChangeHandler}
+    <ul className="expenses-list">
+      {props.items.map((expense) => (
+        <ExpenseItem
+          key={expense.id}
+          title={expense.title}
+          amount={expense.amount}
+          date={expense.date}
         />
-        {renderExpenses()}
-      </Card>
-    </div>
+      ))}
+    </ul>
   );
 };
 

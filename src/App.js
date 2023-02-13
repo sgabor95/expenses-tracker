@@ -1,4 +1,4 @@
-import ExpensesList from "./components/Expenses/ExpensesList";
+import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 import React, { useState } from "react";
@@ -38,7 +38,7 @@ const App = () => {
     <div>
       <h2>My app's heading!</h2>
       <NewExpense onAddNewExpense={addExpenseHandler} />
-      <ExpensesList expenses={expenses} />
+      <Expenses items={expenses} />
       <h2>My app's footer!</h2>
     </div>
   );

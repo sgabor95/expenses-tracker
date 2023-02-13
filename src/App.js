@@ -15,13 +15,13 @@ const App = () => {
       id: "e2",
       title: "Car revision",
       amount: 2000,
-      date: new Date("2020 04 15"),
+      date: new Date("2021 04 15"),
     },
     {
       id: "e3",
       title: "Supermarket",
       amount: 300,
-      date: new Date("2020 04 16"),
+      date: new Date("2022 04 16"),
     },
   ];
 

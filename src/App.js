@@ -36,10 +36,8 @@ const App = () => {
 
   return (
     <div>
-      <h2>My app's heading!</h2>
       <NewExpense onAddNewExpense={addExpenseHandler} />
       <Expenses items={expenses} />
-      <h2>My app's footer!</h2>
     </div>
   );
 };
